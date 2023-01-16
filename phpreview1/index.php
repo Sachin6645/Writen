@@ -1,53 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-    <?php
-    $cars = array("BMW","BOLVO","YAMAHA");
-    // for each
-    foreach($cars as $value)
-    {
-      echo $value."<br>"; 
-    }
-//    for loop
-for($i = 0; $i < count($cars);$i++){
-    echo $cars[$i]."<br>";
-}
-// foreach loop for associative array
-$persons = array("peter"=>50, "jone"=>60,"Harry"=>45);
-foreach($persons as $x=> $v){
-    echo "Key:".$x. ",Value:".$v."<br>";
+
+<div class="container mt-3">
+  <h2>Stacked form</h2>
+  <form action="index.php" method="post">
+    <div class="mb-3 mt-3">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+    </div>
+    <div class="mb-3">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+    </div>
+    <div class="mb-3">
+      <label for="nam">Name:</label>
+      <input type="text" class="form-control" id="nam" placeholder="Enter Name" name="name">
+    </div>
+    <div class="form-check mb-3">
+      <label class="form-check-label">
+        <input class="form-check-input" type="checkbox" name="remember"> Remember me
+      </label>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<?php
+if ($_SERVER["REQUEST_METHOD"]=="POST"){
+  var_dump($_POST); 
+  echo $_POST["email"];
+  echo $_POST["name"];
 }
 
-// function
-function sachin($v1,$v2){
-    $sum = $v1+$v2;
-    
-    return $sum;
-   
-}
+  
 
-echo sachin(30,50);
-echo "<br>";
-echo sachin(400,100);
-echo "<br>";
-
-function sachin1($v1,$v2){
-    $sub = $v1-$v2;
-    
-    return $sub;
-   
-}
-echo sachin1(400,200);
-
-// Global variable
-var_dump($_SERVER);
+  
 ?>
-
 </body>
 </html>
